@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+<script>
+    var globalVar = 5;
+    let globalLet = 5;
+    const globalConst = 5;
+
+    globalVar2 = 5;
+    window.globalVar3 = 5;
+    this.globalVar4 = 5;
+
+    //testLetAndVar();
+    //testLetAndVar2();
+
+    //console.log("--testGlobal--");
+    //testGlobal();
+
+    //console.log("--testGlobalVar--");
+    //testGlobalVar();
+
+    //console.log("--testGlobalVar2--");
+    //testGlobalVar2();
+
+    //console.log("--testGlobalLet--");
+    //testGlobalLet();
+
+    //console.log("--testGlobalConst--");
+    //testGlobalConst();
+
+    console.log("--testGlobalConst2--");
+    testGlobalConst2();
+
+    function testGlobal() {
+        console.log(globalVar); // 5   
+        console.log(globalVar2); // 5
+        console.log(globalVar3); // 5
+        console.log(globalVar4); // 5      
+        console.log(globalLet); // 5   
+        console.log(globalConst); // 5           
+        
+        console.log(window.globalVar); // 5
+        console.log(window.globalVar2); // 5
+        console.log(window.globalVar3); // 5
+        console.log(window.globalVar4); // 5
+        console.log(window.globalLet); // undefined
+        console.log(window.globalConst); // undefined
+    }
+
+    function testGlobalVar() {
+        console.log(globalVar); // undefined  
+        console.log(window.globalVar); // 5  
+        
+        var globalVar = 15;
+        console.log(globalVar); // 15
+    }
+
+    function testGlobalVar2() {
+        console.log(globalVar); // 5   
+        console.log(window.globalVar); // 5  
+
+        globalVar = 6;
+        console.log(globalVar); // 6   
+        console.log(window.globalVar); // 6
+        
+        var globalVar2 = 15;
+        console.log(globalVar2); // 15
+    }
+
+    function testGlobalLet() {
+        // console.log(globalLet); // error   
+        console.log(window.globalLet); // undefined
+
+        let globalLet = 15;
+        console.log(globalLet); // 15
+    }
+
+    function testGlobalConst() {
+        //console.log(globalConst); // error   
+        console.log(window.globalConst); // undefined
+
+        const globalConst = 15;
+        console.log(globalConst); // 15
+    }
+
+    function testGlobalConst2() {
+        console.log(globalConst); // 5
+        console.log(window.globalConst); // undefined
+
+        // globalConst = 6; // error
+    }
+
+    function testVar() {
+        var x = 10;
+        console.log(x); // 10
+        if (true) {
+            var x = 20;
+            console.log(x); // 20
+        }
+        console.log(x); // 20
+    }
+
+    function testVar2() {
+        y = 5;
+        var y;
+        console.log(y); // 5
+    }
+
+    function testVar3() {
+        for (var i = 0; i < 10; ++i) {
+        }
+        console.log(i); // 10
+    } 
+
+    function initialization() {
+        let z;
+        console.log(z); // undefined
+
+        console.log(x); // undefined
+        y; // Reference error: y is not defined
+
+        var x = "local";
+        let y = "local";
+    }
+
+    function testLet() {
+        let x = 1;
+        console.log(x); // 1
+        for (let i = 0; i < 1; i++) {
+            let x = 2;
+            console.log(x); // 2
+            if (true) {
+                let x = 3;
+                console.log(x); // 3
+            }
+            console.log(x); // 2
+        }
+        console.log(x); // 1
+    }
+
+    function testLet2() {
+        let x = 1;
+        console.log(x); // 1
+        for (let i = 0; i < 1; i++) {
+            let y = 2 + x;
+            console.log(y); // 3            
+        }
+    }
+
+    function testConst() {
+        const x = 1;
+        console.log(x); // 1
+        for (let i = 0; i < 1; i++) {
+            const x = 2;
+            console.log(x); // 2
+            if (true) {
+                const x = 3;
+                console.log(x); // 3
+            }
+            console.log(x); // 2
+        }
+        console.log(x); // 1
+    }
+
+    function testLetAndVar() {
+        var x = 5;
+        console.log(x); // 5
+        if (true) {
+            let x = 1;
+            console.log(x); // 1
+
+        }
+        console.log(x); // 5
+    }
+
+    // nie działa
+    function testLetAndVar2() {
+        let x = 5; // error
+        console.log(x); // 5
+        if (true) {
+            var x = 1;
+            console.log(x); // 1
+
+        }
+        console.log(x); // 5
+    }
+</script>
+</body>
+</html>

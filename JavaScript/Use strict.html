@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+<script>
+
+    //withExample();
+    undefinedVariable();
+    //overrideProperties();
+    //overrideParameters(1, 2, 3);
+    //overrideGlobalDefinedVariables();
+    //argumentsExample1(1, 2, 3);
+    //argumentsExample2(1, 2, 3);
+
+    function argumentsExample2(a, b, c) {
+        "use strict";
+
+        a = -1;
+        console.log(arguments); // 1, 2, 3
+    }
+
+    //function argumentsExample1(a, b, c) {
+    //    "use strict";
+
+    //    arguments = 1; //  SyntaxError: Unexpected eval or arguments in strict mode
+    //}
+
+    function overrideGlobalDefinedVariables() {
+        "use strict";
+
+        NaN = 3; // TypeError: Cannot assign to read only property 'NaN' of object '#<Window>'
+        Infinity = 3; // TypeError: Cannot assign to read only property 'Infinity' of object '#<Window>'
+    }
+
+    //function overrideParameters(a, b, a) { // SyntaxError: Duplicate parameter name not allowed in this context
+    //    "use strict";
+    //    console.log(a);
+    //}
+
+    //function overrideProperties() {
+    //    "use strict";
+
+    //    var test = {
+    //        a: 1,
+    //        b: 2,
+    //        a: 3
+    //    };
+    //}
+
+    function undefinedVariable() {
+        "use strict";
+
+        text = "aaaa";
+        console.log(text); // ReferenceError: text is not defined
+    }
+
+    function withExample() {
+        var longVariableName = {
+            long_property_name_1: {
+                long_property_name_2: {
+                    long_property_name_3: 10,
+                    long_property_name_4: 20,
+                }
+            }
+        };
+
+        with (longVariableName.long_property_name_1.long_property_name_2) {
+            long_property_name_3 = 55;
+            long_property_name_4 = 66;
+        }
+
+        console.log(longVariableName.long_property_name_1.long_property_name_2.long_property_name_3); // 55
+        console.log(longVariableName.long_property_name_1.long_property_name_2.long_property_name_4); // 66
+    }
+
+</script>
+</body>
+</html>
