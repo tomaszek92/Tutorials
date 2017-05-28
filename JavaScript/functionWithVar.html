@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title></title>
+</head>
+<body>
+    <button id="clickMeBtn">Click me</button>
+<script>
+    var x = (function() {
+        function test() {
+            var tmp = 1;
+            console.log(tmp);
+
+            function test2() {
+                tmp = 2;
+                console.log(tmp);
+            }
+
+            tmp = 4;
+            console.log(tmp);
+
+            $("#clickMeBtn").click(function() {
+                test2();
+            });
+        }
+
+        function test2() {
+            var tmp;
+            console.log(tmp);
+        }
+
+        return {
+            test: test,
+            test2: test2
+        };
+    })();
+
+    x.test();
+    console.log();
+    x.test();
+    console.log();
+    x.test2();
+</script>
+</body>
+</html>

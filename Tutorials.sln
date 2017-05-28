@@ -11,8 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BenchmarkDotNet", "Library.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JavaScript", "JavaScript", "{7B704E9B-624D-4A9C-85D5-CBDF2EC0F26A}"
 	ProjectSection(SolutionItems) = preProject
-		JavaScript\JavaScript- var, let, const.html = JavaScript\JavaScript- var, let, const.html
-		JavaScript\Use strict.html = JavaScript\Use strict.html
+		functionWithVar.html = functionWithVar.html
+		JavaScript\use strict.html = JavaScript\use strict.html
+		JavaScript\var, let, const.html = JavaScript\var, let, const.html
+		wzorzec memoization.html = wzorzec memoization.html
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "C Sharp", "C Sharp", "{9C24E9CF-2F55-4485-B0B3-E024D2946388}"

@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+<script>
+
+    var longRunningFunction = function (a, b, c) {
+        longRunningFunction.cache = longRunningFunction.cache || {};
+
+        const cacheKey = JSON.stringify(arguments);
+        console.log(cacheKey);
+
+        if (!longRunningFunction.cache[cacheKey]) {
+            sleep(5000);
+            longRunningFunction.cache[cacheKey] = a * b * c;
+        }
+        return longRunningFunction.cache[cacheKey];
+    }
+
+
+    function sleep(timeInMs) {
+        const d1 = new Date();
+        let d2 = new Date();
+        while (d2.valueOf() < d1.valueOf() + timeInMs) {
+            d2 = new Date();
+        }
+    }
+
+    console.log(longRunningFunction(1, 2, 3));
+    console.log(longRunningFunction(1, 2, 3));
+    console.log(longRunningFunction(10, 20, 3));
+    console.log(longRunningFunction(3, 2, 3));
+    console.log(longRunningFunction(30, 11, 3));
+    console.log(longRunningFunction(3, 2, 3));
+    console.log(longRunningFunction(3, 2, 3));
+
+</script>
+</body>
+</html>
