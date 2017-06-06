@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+<script>
+    
+    function Person() {
+        this.name = "";
+    }
+    Person.prototype.introduce = function() {
+        return "I'm " + this.name;
+    }
+
+    var BetterPerson = (function () {
+
+        var count = 0;
+
+        var person = function () {
+            count++;
+            this.name = "";
+        }    
+        person.prototype.introduce = function () {
+            return "I'm " + this.name;
+        }
+        person.getCount = function() {
+            return count;
+        }
+
+        return person;
+    }());
+
+    var adam = new Person();
+    adam.name = "adam";
+    console.log(adam.introduce());
+
+    var adam2 = new BetterPerson();
+    adam2.name = "adam2";
+    console.log(adam2.introduce());
+    console.log(BetterPerson.getCount());
+
+    var tom = new BetterPerson();
+    console.log(BetterPerson.getCount());
+
+</script>
+</body>
+</html>

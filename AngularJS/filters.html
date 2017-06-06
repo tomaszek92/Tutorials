@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8"/>
+    <script src="Scripts/angular.js"></script>
+    <style>
+        .margin { margin-bottom: 20px; }
+    </style>
+</head>
+<body ng-app="app">
+<div ng-controller="filterCtrl">
+    <div class="margin">
+        <h3>Napisowe</h3>
+        <div>
+            {{text | lowercase}}
+        </div>
+        <div>
+            {{text | uppercase}}
+        </div>
+    </div>
+    <div class="margin">
+        <h3>Liczbowe</h3>
+        <div>
+            {{number}}
+        </div>
+        <div>
+            {{number | number}}
+        </div>
+        <div>
+            {{number | number: 4}} <!--liczba miejsc po przecinku-->
+        </div>
+        <div>
+            {{number | currency}}
+        </div>
+        <div>
+            {{number | currency:'€'}}
+        </div>
+    </div>
+    <div class="margin">
+        <h3>Datowe</h3>
+        <div>
+            {{date}}
+        </div>
+        <div>
+            {{date | date}}
+        </div>
+        <div>
+            {{date | date: 'short'}} <!--liczba miejsc po przecinku-->
+        </div>
+        <div>
+            {{date | date: 'fullDate'}}
+        </div>
+        <div>
+            {{date | date: 'mediumTime'}}
+        </div>
+        <div>
+            {{date | date: 'MMMM'}}
+        </div>
+        <div>
+            {{date | date: 'd, EEEE'}}
+        </div>
+    </div>
+    <div class="margin">
+        <table>
+            <thead>
+            <tr>
+                <th>name</th>
+                <th>age</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="person in persons | orderBy: ['-age', 'imie'] | limitTo: 3">
+                <td>{{person.name}}</td>
+                <td>{{person.age}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<script>
+    var app = angular.module("app", []);
+    app.controller("filterCtrl",
+        function($scope) {
+            $scope.text = "Litwo, Ojczyzno moja! ty jesteś jak zdrowie";
+            $scope.number = 123567890;
+            $scope.date = new Date();
+
+            $scope.persons = [
+                {
+                    name: "Tom",
+                    age: 18
+                },
+                {
+                    name: "Helen",
+                    age: 41
+                },
+                {
+                    name: "Max",
+                    age: 3
+                },
+                {
+                    name: "Felix",
+                    age: 55
+                },
+                {
+                    name: "Kate",
+                    age: 33
+                },
+                {
+                    name: "Kim",
+                    age: 55
+                }
+            ];
+        });
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8"/>
+    <script src="Scripts/angular.js"></script>
+</head>
+<body ng-app="app">
+<div ng-controller="dependencyInjectionCtrl">
+    {{oneOneOne}}
+    <br/>
+</div>
+<script>
+    var app = angular.module("app", []);
+
+    app.constant("one", 1);
+
+    app.factory("exampleFactory1",
+        function() {
+            return {
+                test: function() {
+                    console.log("exampleFactory1: test");
+                }
+            };
+        });
+
+    app.factory("exampleFactory2",
+        function(exampleFactory1) {
+            return {
+                test: function() {
+                    exampleFactory1.test();
+                    console.log("exampleFactory2: test");
+                }
+            };
+        });
+
+    app.service("exampleService1",
+        [
+            "exampleFactory1", "exampleFactory2", function(factroy1, factory2) {
+                this.test = function() {
+                    factroy1.test();
+                    factory2.test();
+                    console.log("exampleService1: test");
+                }
+            }
+        ]);
+
+    app.controller("dependencyInjectionCtrl",
+        function($scope, exampleService1, one) {
+            exampleService1.test();
+
+            $scope.oneOneOne = one;
+        });
+</script>
+</body>
+</html>

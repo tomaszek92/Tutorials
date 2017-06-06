@@ -12,6 +12,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JavaScript", "JavaScript", "{7B704E9B-624D-4A9C-85D5-CBDF2EC0F26A}"
 	ProjectSection(SolutionItems) = preProject
 		functionWithVar.html = functionWithVar.html
+		JavaScript\new function.html = JavaScript\new function.html
 		JavaScript\use strict.html = JavaScript\use strict.html
 		JavaScript\var, let, const.html = JavaScript\var, let, const.html
 		wzorzec memoization.html = wzorzec memoization.html
@@ -24,6 +25,28 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Technologies", "Technologies", "{F030C13E-426F-4642-9885-7AD7CBF2F563}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Features", "Features", "{6ED86963-66AF-496F-95C1-DC9E5CAB9921}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "AngularJS", "AngularJS\", "{FFD6CA21-8691-4124-B7D6-70AB78BD29C5}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_54852"
+		Debug.AspNetCompiler.PhysicalPath = "AngularJS\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_54852\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_54852"
+		Release.AspNetCompiler.PhysicalPath = "AngularJS\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_54852\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "54852"
+		SlnRelativePath = "AngularJS\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +66,10 @@ Global
 		{CD6F4B84-7662-454E-BBE5-0C07CB426A83}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD6F4B84-7662-454E-BBE5-0C07CB426A83}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD6F4B84-7662-454E-BBE5-0C07CB426A83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFD6CA21-8691-4124-B7D6-70AB78BD29C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFD6CA21-8691-4124-B7D6-70AB78BD29C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFD6CA21-8691-4124-B7D6-70AB78BD29C5}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFD6CA21-8691-4124-B7D6-70AB78BD29C5}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -54,5 +81,6 @@ Global
 		{7AAA0B07-DAFD-4593-B494-F7DCB9CE3AEA} = {9C24E9CF-2F55-4485-B0B3-E024D2946388}
 		{F030C13E-426F-4642-9885-7AD7CBF2F563} = {9C24E9CF-2F55-4485-B0B3-E024D2946388}
 		{6ED86963-66AF-496F-95C1-DC9E5CAB9921} = {9C24E9CF-2F55-4485-B0B3-E024D2946388}
+		{FFD6CA21-8691-4124-B7D6-70AB78BD29C5} = {7B704E9B-624D-4A9C-85D5-CBDF2EC0F26A}
 	EndGlobalSection
 EndGlobal

@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8"/>
+    <script src="Scripts/angular.js"></script>
+    <style>
+        .margin {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body ng-app="app">
+
+<div ng-controller="angularCopyCtrl" class="margin">
+    <h3>copy</h3>
+    {{obj1}}
+    <br/>
+    {{obj2}}
+</div>
+
+<div ng-controller="agularEqualsCtrl" class="margin">
+    <h3>equals</h3>
+    {{obj1AndObj2}}
+    <br/>
+    {{obj2AndObj3}}
+</div>
+
+<div ng-controller="angularForEachCtrl" class="margin">
+    <h3>forEach</h3>
+    <ul>
+        <li ng-repeat="name in names">{{name}}</li>
+    </ul>
+</div>
+    
+<div ng-controller="angularIsCtrl" class="margin">
+    <h3>is...</h3>
+    {{isArrayTrue}}<br />
+    {{isArrayFalse}}<br />
+    <br />
+    {{isDateTrue}}<br />
+    {{isDateFalse1}}<br />
+    {{isDateFalse2}}<br />
+    <br />
+    {{isNumberTrue}}<br />
+    {{isNumberFalse1}}<br />
+    {{isNumberFalse2}}<br />
+    <br />
+    {{isStringTrue}}<br />
+    {{isStringFalse}}<br />
+    <br />
+    {{isFunctionTrue}}<br />
+    {{isFunctionFalse}}<br />
+</div>
+    
+<div ng-controller="angularLowerUpperCaseCtrl" class="margin">
+    <h3>lowercase, uppercase</h3>
+    {{lower}}
+    <br />
+    {{upper}}
+</div>
+
+<script>
+    var persons = [
+        {
+            name: "Tom",
+            age: 18
+        },
+        {
+            name: "Helen",
+            age: 41
+        },
+        {
+            name: "Max",
+            age: 3
+        },
+        {
+            name: "Felix",
+            age: 55
+        },
+        {
+            name: "Kate",
+            age: 33
+        }
+    ];
+
+    var app = angular
+        .module("app", [])
+        .controller("angularCopyCtrl",
+            function($scope) {
+                let obj1 = {
+                    a: {
+                        a1: "test",
+                        a2: {
+                            aa2: "test2",
+                            aa3: -1
+                        }
+                    },
+                    b: [
+                        {
+                            a: 1
+                        },
+                        {
+                            a: 3
+                        }
+                    ]
+                };
+                let obj2 = angular.copy(obj1);
+                obj1.a.a2 = "sialala";
+
+                $scope.obj1 = obj1;
+                $scope.obj2 = obj2;
+            })
+        .controller("agularEqualsCtrl",
+            function($scope) {
+                let obj1 = {
+                    test1: {
+                        a: -4
+                    },
+                    test2: {
+                        a: -4
+                    }
+                };
+                let obj2 = {
+                    test2: {
+                        a: -4
+                    },
+                    test1: {
+                        a: -4
+                    }
+                };
+                let obj3 = {
+                    test2: {
+                        a: 4
+                    },
+                    test1: {
+                        a: -4
+                    }
+                };
+
+                $scope.obj1AndObj2 = angular.equals(obj1, obj2);
+                $scope.obj2AndObj3 = angular.equals(obj2, obj3);
+            })
+        .controller("angularForEachCtrl",
+            function($scope) {
+
+                var names = [];
+                angular.forEach(persons,
+                    function(obj) {
+                        names.push(obj.name);
+                    });
+
+                $scope.names = names;
+            })
+        .controller("angularIsCtrl",
+            function($scope) {
+                $scope.isArrayTrue = angular.isArray(persons);
+                $scope.isArrayFalse = angular.isArray({
+                    a: "test"
+                });
+
+                $scope.isDateTrue = angular.isDate(new Date(2016, 01, 01));
+                $scope.isDateFalse1 = angular.isDate(1);
+                $scope.isDateFalse2 = angular.isDate("2016-01-01");
+
+                $scope.isNumberTrue = angular.isNumber(342.32);
+                $scope.isNumberFalse1 = angular.isNumber([]);
+                $scope.isNumberFalse2 = angular.isNumber("342.32");
+
+                $scope.isStringTrue = angular.isString("fadas");
+                $scope.isStringFalse = angular.isString([]);
+
+                $scope.isFunctionTrue = angular.isFunction(function() {});
+                $scope.isFunctionFalse = angular.isFunction([]);
+            })
+        .controller("angularLowerUpperCaseCtrl",
+            function($scope) {
+                var str = "Jakiś testowy NAPIS";
+                $scope.lower = angular.lowercase(str);
+                $scope.upper = angular.uppercase(str);
+            });
+
+</script>
+</body>
+</html>
