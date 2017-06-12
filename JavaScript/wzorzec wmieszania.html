@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+<script>
+
+    function mix() {
+        const child = {};
+
+        for (let arg = 0; arg < arguments.length; arg++) {
+            for (let prop in arguments[arg]) {
+                if (arguments[arg].hasOwnProperty(prop)) {
+                    child[prop] = arguments[arg][prop];
+                }
+            }
+        }
+
+        return child;
+    }
+
+    function mix2() {
+        const child = {};
+
+        for (let arg = 0; arg < arguments.length; arg++) {
+            for (let prop in arguments[arg]) {
+                if (arguments[arg].hasOwnProperty(prop)) {
+                    const argPropValue = arguments[arg][prop];
+                    if (child.hasOwnProperty(prop)) {
+                        if (Array.isArray(child[prop])) {
+                            child[prop].push(argPropValue);
+                        } else {
+                            const tmp2 = child[prop];
+                            child[prop] = [];
+                            child[prop].push(tmp2, argPropValue);
+                        }
+                    } else {
+                        child[prop] = argPropValue;
+                    }
+                }
+            }
+        }
+
+        return child;
+    }
+
+    const cpu = {
+        producent: "AMD", 
+        model: "Ryzen 5 1600", 
+        cores: 6
+    };
+    const gpu = {
+        producent: "Gigabyte",
+        chipset: "GeForce GTX 1070",
+        memory: 8
+    };
+    const motherboard = {
+        producent: "MSI",
+        model: "B350 TOMAHAWK",
+        chipset: "AMD B350",
+        socket: "AM4"
+    };
+    const ram = { 
+        producent: "Crucial", 
+        model: "Tactical",
+        memory: 16, 
+        type: "DDR4",
+        array: [1,2]
+    };
+
+    const computer = mix(cpu, gpu, motherboard, ram);
+    const computer2 = mix2(cpu, gpu, motherboard, ram);
+
+    console.log(computer);
+    console.log(computer2);
+</script>
+</body>
+</html>

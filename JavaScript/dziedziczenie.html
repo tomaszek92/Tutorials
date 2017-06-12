@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+<script>
+    function Article() {
+        this.tags = ["js", "css"];
+
+        this.display = function() {
+            return this.tags;
+        }
+    }
+    Article.prototype.displayProto = function() {
+        return this.tags;
+    }
+    var article = new Article();
+
+    // wzorzec domyœlny
+    function BlogPost() {
+    }
+    BlogPost.prototype = article;
+
+    // po¿yczanie konstruktora
+    function StaticPage() {
+        Article.apply(this, arguments);
+    }
+
+    // po¿yczanie i ustawianie prototypu
+    function Column() {
+        Article.apply(this, arguments);
+    }
+    Column.prototype = new Article();
+
+    var blog = new BlogPost();
+    var staticPage = new StaticPage();
+    var column = new Column();
+
+    blog.tags.push("html");
+    staticPage.tags.push("php");
+    column.tags.push("c#");
+
+    console.log(article.hasOwnProperty("tags"), article.tags, article.display(), article.displayProto());
+    console.log(blog.hasOwnProperty("tags"), blog.tags, blog.display(), blog.displayProto());
+    console.log(staticPage.hasOwnProperty("tags"), staticPage.tags, staticPage.display());
+    console.log(column.hasOwnProperty("tags"), column.tags, column.display(), column.displayProto());
+
+    //Dziedziczenie prototypowe
+    function Person() {
+        this.name = "Adam";
+    }
+    Person.prototype.getName = function() {
+        return this.name;
+    }
+    var personBase = new Person();
+    var person = Object.create(personBase);
+    console.log(person.getName());
+    personBase.name = "Tom";
+    console.log(person.getName());
+    person.name = "Mark";
+    console.log(personBase.getName());
+    console.log(person.getName());
+
+    var personProto = Object.create(Person.prototype);
+    console.log(personProto.getName());
+</script>
+</body>
+</html>

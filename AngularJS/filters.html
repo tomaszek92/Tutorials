@@ -70,7 +70,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="person in persons | orderBy: ['-age', 'imie'] | limitTo: 3">
+            <tr ng-repeat="person in persons | orderBy: ['-age', 'name'] | limitTo: 3">
                 <td>{{person.name}}</td>
                 <td>{{person.age}}</td>
             </tr>
