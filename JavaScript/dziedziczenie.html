@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ï»¿<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -19,17 +19,17 @@
     }
     var article = new Article();
 
-    // wzorzec domyœlny
+    // wzorzec domyï¿½lny
     function BlogPost() {
     }
     BlogPost.prototype = article;
 
-    // po¿yczanie konstruktora
+    // poï¿½yczanie konstruktora
     function StaticPage() {
         Article.apply(this, arguments);
     }
 
-    // po¿yczanie i ustawianie prototypu
+    // poï¿½yczanie i ustawianie prototypu
     function Column() {
         Article.apply(this, arguments);
     }

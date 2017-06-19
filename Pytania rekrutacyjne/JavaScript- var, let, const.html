@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>    
+</head>
+<body>
+<script>   
+    function testVar() {
+        x = 2;
+        console.log(x);
+        var x;
+
+        function test2() {
+            var x = 5;
+            console.log(x);
+        }
+        test2();
+        console.log(x);
+
+        if (true) {
+            var x = 10;
+            console.log(x);
+        }
+        console.log(x);
+    }
+
+    function test() {
+        var x = 5;
+        if (true) {
+            let x = 10;
+        }
+        console.log(x);
+    }
+
+    console.log("testVar");
+    testVar();
+    console.log("test");
+    test();
+</script>
+</body>
+</html>

@@ -50,6 +50,15 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "AngularJS", "AngularJS\", "
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pytania rekrutacyjne", "Pytania rekrutacyjne", "{8EEBFCCA-9650-4E80-88D3-568B18DC1B36}"
+	ProjectSection(SolutionItems) = preProject
+		Pytania rekrutacyjne\Bootastrap- grid system.html = Pytania rekrutacyjne\Bootastrap- grid system.html
+		Pytania rekrutacyjne\CSS- dyrektywa important.html = Pytania rekrutacyjne\CSS- dyrektywa important.html
+		Pytania rekrutacyjne\JavaScript- arguments.html = Pytania rekrutacyjne\JavaScript- arguments.html
+		Pytania rekrutacyjne\JavaScript- var, let, const.html = Pytania rekrutacyjne\JavaScript- var, let, const.html
+		Pytania rekrutacyjne\jQuery- selektory.html = Pytania rekrutacyjne\jQuery- selektory.html
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

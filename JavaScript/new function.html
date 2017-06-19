@@ -33,14 +33,45 @@
         return person;
     }());
 
+    var Blog = (function() {
+        var count = 0;
+
+        var blog = function (title, tags) {
+            this.id = ++count;
+            this.title = title || "";
+            this.tags = tags || [];
+        }
+
+        blog.prototype.displayInfo = function () {
+            return "Id: " + this.id + "; title: " + this.title + "; tags: " + this.tags.join(", ");
+        }
+
+        blog.getCount = function() {
+            return count;
+        }
+
+        return blog;
+    }());
+
+
+    var blog1 = new Blog("Tabele przy pomocy Bootstrap", ["JavaScript", "Bootstrap", "css"]);
+    console.log(blog1.displayInfo());
+
+    var blog2 = new Blog();
+    blog2.title = "Wzorzec Fabryka w C#";
+    blog2.tags = ["C#", "wzorce programowania"];
+    console.log(blog2.displayInfo());
+
+    var blog3 = new Blog();
+    console.log(Blog.getCount());
+
     var adam = new Person();
-    adam.name = "adam";
+    adam.name = "Adam";
     console.log(adam.introduce());
 
     var adam2 = new BetterPerson();
     adam2.name = "adam2";
     console.log(adam2.introduce());
-    console.log(BetterPerson.getCount());
 
     var tom = new BetterPerson();
     console.log(BetterPerson.getCount());
