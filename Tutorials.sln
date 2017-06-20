@@ -54,9 +54,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pytania rekrutacyjne", "Pyt
 	ProjectSection(SolutionItems) = preProject
 		Pytania rekrutacyjne\Bootastrap- grid system.html = Pytania rekrutacyjne\Bootastrap- grid system.html
 		Pytania rekrutacyjne\CSS- dyrektywa important.html = Pytania rekrutacyjne\CSS- dyrektywa important.html
+		Pytania rekrutacyjne\CSS- używanie styli.html = Pytania rekrutacyjne\CSS- używanie styli.html
 		Pytania rekrutacyjne\JavaScript- arguments.html = Pytania rekrutacyjne\JavaScript- arguments.html
 		Pytania rekrutacyjne\JavaScript- var, let, const.html = Pytania rekrutacyjne\JavaScript- var, let, const.html
+		Pytania rekrutacyjne\jQuery- manipulacja elementami.html = Pytania rekrutacyjne\jQuery- manipulacja elementami.html
 		Pytania rekrutacyjne\jQuery- selektory.html = Pytania rekrutacyjne\jQuery- selektory.html
+		Pytania rekrutacyjne\jQuery- zmiana właściwosci elementu.html = Pytania rekrutacyjne\jQuery- zmiana właściwosci elementu.html
 	EndProjectSection
 EndProject
 Global
